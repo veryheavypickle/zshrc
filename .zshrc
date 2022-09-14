@@ -5,3 +5,6 @@ eval "$(pyenv init -)"
 # brew install youtube-dl
 # make audio extraction default and set download location to downloads
 alias dl="youtube-dl -x -o '~/Downloads/%(title)s.%(ext)s'"
+
+# git clone shortcut
+alias cl="git clone"
