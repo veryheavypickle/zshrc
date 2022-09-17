@@ -10,7 +10,6 @@ main () {
 	echo -en "Do you wish to install all remaining apps?\n(y/n): "
 	read all
 
-	installBrew
 	installPython
 
 	# install youtube download
@@ -33,12 +32,6 @@ main () {
 	fi
 
 	gitStuff
-}
-
-installBrew () {
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	# Restart terminal
-	zsh
 }
 
 installPython () {
