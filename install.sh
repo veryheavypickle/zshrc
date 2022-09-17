@@ -27,9 +27,8 @@ main () {
 
 	if [ "$all" == "y" ]; then
 		installAll
+		installMySQL $pswd
 	fi
-
-	installMySQL $pswd
 
 	# check if zshrc exist
 	if test -f "~/.zshrc"; then
