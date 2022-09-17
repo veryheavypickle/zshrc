@@ -10,6 +10,8 @@ main () {
 	echo -en "Do you wish to install all remaining apps?\n(y/n): "
 	read all
 
+	xcode-select --install
+
 	installPython
 
 	# install youtube download
