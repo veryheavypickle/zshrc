@@ -1,6 +1,7 @@
 #!/bin/bash
 
 NC='\033[0m' # No Color
+RED='\033[0;31m'
 WHITE='\033[0;36m'
 
 main () {
@@ -22,6 +23,13 @@ main () {
 
 	if [ "$all" == "y" ]; then
 		installAll
+	fi
+
+	# check if zshrc exist
+	if test -f "~/.zshrc"; then
+    	echo -e "${RED} Bash profile ${WHITE}'.zshrc' ${RED}already exists${NC}"
+	else
+		cp .zshrc ~/.zshrc
 	fi
 
 	git config --global user.name "veryheavypickle"
