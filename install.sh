@@ -32,8 +32,7 @@ main () {
 		cp .zshrc ~/.zshrc
 	fi
 
-	git config --global user.name "veryheavypickle"
-	git config --global user.email xavier.carroll01@gmail.com
+	gitStuff
 }
 
 installBrew () {
@@ -42,14 +41,14 @@ installBrew () {
 	zsh
 }
 
-installPython() {
+installPython () {
 	# install python
 	brew install pyenv
 	pyenv install 3.10.6
 	pyenv global 3.10.6
 }
 
-installBasics() {
+installBasics () {
 	brew install --cask brave-browser
 	brew install --cask fanny
 	brew install --cask freetube
@@ -60,7 +59,7 @@ installBasics() {
 	brew install --cask webtorrent
 }
 
-installAll() {
+installAll () {
 	brew install --cask arduino
 	brew install --cask blender
 	brew install --cask clion
@@ -75,6 +74,12 @@ installAll() {
 	brew install --cask termius
 	brew install --cask virtualbox
 	brew install --cask virtualbox-extension-pack
+}
+
+gitStuff () {
+	git config --global user.name "veryheavypickle"
+	git config --global user.email xavier.carroll01@gmail.com
+	git config pull.rebase false
 }
 
 main
