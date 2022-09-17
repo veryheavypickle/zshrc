@@ -5,6 +5,8 @@ RED='\033[0;31m'
 WHITE='\033[0;36m'
 
 main () {
+	echo -en "Type a new password for the MySQL root user: "
+	read pswd
 	echo -en "Do you wish to install the following apps${WHITE} Brave, Fanny, FreeTube, Macs Fan Control, Stremio, Sublime Text, VLC and Webtorrent?${NC}\n(y/n): "
 	read basics
 	echo -en "Do you wish to install all remaining apps?\n(y/n): "
@@ -16,6 +18,7 @@ main () {
 
 	# install youtube download
 	brew install youtube-dl
+	brew install ffmpeg # youtube dl requirement
 
 	# install apps
 	if [ "$basics" == "y" ]; then
@@ -25,6 +28,8 @@ main () {
 	if [ "$all" == "y" ]; then
 		installAll
 	fi
+
+	installMySQL $pswd
 
 	# check if zshrc exist
 	if test -f "~/.zshrc"; then
@@ -69,6 +74,13 @@ installAll () {
 	brew install --cask termius
 	brew install --cask virtualbox
 	brew install --cask virtualbox-extension-pack
+}
+
+installMySQL () {
+	# $1 is root password
+	brew install mysql
+	brew services start mysql
+	mysqladmin -u root password "$1"
 }
 
 gitStuff () {
