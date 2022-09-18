@@ -63,6 +63,7 @@ installAll () {
 	brew install --cask blender
 	brew install --cask clion
 	brew install --cask discord
+	brew install --cask docker
 	brew install --cask keepassxc
 	brew install --cask mysqlworkbench
 	brew install --cask openvpn-connect
