@@ -85,8 +85,8 @@ installMySQL () {
 }
 
 installDocker () {
-	brew install docker-compose
 	brew install --cask docker
+	brew install docker-compose
 }
 
 gitStuff () {
