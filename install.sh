@@ -28,6 +28,7 @@ main () {
 	if [ "$all" == "y" ]; then
 		installAll
 		installMySQL $pswd
+		installDocker
 	fi
 
 	# check if zshrc exist
@@ -63,7 +64,6 @@ installAll () {
 	brew install --cask blender
 	brew install --cask clion
 	brew install --cask discord
-	brew install --cask docker
 	brew install --cask intel-power-gadget
 	brew install --cask keepassxc
 	brew install --cask mysqlworkbench
@@ -82,6 +82,11 @@ installMySQL () {
 	brew install mysql
 	brew services start mysql
 	mysqladmin -u root password "$1"
+}
+
+installDocker () {
+	brew install docker-compose
+	brew install --cask docker
 }
 
 gitStuff () {
